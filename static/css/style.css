@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 3.125vw;
+}
+
+body {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  font-family: -apple-system-font, "Microsoft YaHei",  "Helvetica Neue", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+a img {
+  border: 0;
+}
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*ȫ����ʽ*/
+.float-none {
+    float: none;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+a {
+    color: #109d59;
+}
+
+a:active {
+    color: #14c16d;
+}
+
+a.link {
+    text-decoration: underline;
+}
+
+.no-offset {
+    margin: 0;
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.flex-start {
+    align-self: flex-start;
+    -webkit-align-self: flex-start;
+}
+
+.flex-end {
+    align-self: flex-end;
+    -webkit-align-self: flex-end;
+}
+
+.clr-black {
+    color: #000;
+}
+
+.clr-red {
+    color: #ff0000;
+}
+
+.clr-orange {
+    color: #FB7B0A;
+}
+
+.clr-gray {
+    color: #777;
+}
+
+.clr-skin {
+    color: #109d59;
+}
+
+.fs-9 {
+    font-size: .9rem;
+}
+
+.fs-10 {
+    font-size: 1.0rem;
+}
+
+.fs-12 {
+    font-size: 1.2rem;
+}
+
+.fs-14 {
+    font-size: 1.4rem;
+}
+
+.fs-15 {
+    font-size: 1.5rem;
+}
+
+.fs-16 {
+    font-size: 1.6rem;
+}
+
+.fs-17 {
+    font-size: 1.7rem;
+}
+
+.fs-18 {
+    font-size: 1.8rem;
+}
