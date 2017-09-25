@@ -2,7 +2,7 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
-var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -30,10 +30,7 @@ module.exports = {
     loaders:[
       {
         test:/\.scss$/,
-        loader:new ExtractTextWebpackPlugin.extract({
-          fallback: 'style-loader',
-          use: 'scss-loader'
-        })
+        loader:ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
       }
     ],
     rules: [
@@ -72,9 +69,5 @@ module.exports = {
         }
       }
     ]
-  },
-  plugins: [
-    new ExtractTextPlugin("css/[name].css"),
-    new ExtractTextPlugin("fonts/[name].css"),
-  ]
+  }
 }
