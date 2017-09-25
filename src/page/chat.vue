@@ -1,8 +1,8 @@
 <template>
   <div>
     <chat-head></chat-head>
-    <chat-body></chat-body>
-    <chat-foot></chat-foot>
+    <chat-body :chats="chats"></chat-body>
+    <chat-foot @sendmsg="sendMessage"></chat-foot>
   </div>
 </template>
 
@@ -12,17 +12,17 @@
   import ChatFoot from '../components/chat/ChatFoot'
 
   export default {
+    props:["chatdata"],
     data() {
       return {
-        chatinfo:chatinfo.get()
+        chats: []
       }
     },
     created (){
     },
     methods:{
-      sendMessage(content){
-        var user = userinfo.get();
-        this.$socket.emit('message', Object.assign(user, {content}));
+      sendMessage(){
+
       }
     },
     components: {

@@ -1,12 +1,16 @@
 <template>
-  <div class="chat-foot weui-cell">
-    <div class="weui-cell__bd">
-      <div style="margin-right:1rem;">
-        <textarea class="weui-textarea" rows="1" v-model="message"></textarea>
+  <div class="chat-foot">
+    <div class="cf-options">
+      <div class="cf-help">
+        <i class="icon-hsuna cwh-help"></i>
+      </div>
+      <div class="cf-input">
+      </div>
+      <div class="cf-select-btn">
+        <i class="icon-hsuna cwh-top-arrows"></i>
       </div>
     </div>
-    <div class="weui-cell__fd">
-      <button type="button" class="weui-btn weui-btn_primary" @click="sendClick">发送</button>
+    <div class="cf-select-list">
     </div>
   </div>
 </template>
@@ -16,7 +20,7 @@
   export default {
     data() {
     return {
-      message:''
+      popupVisible: !1,
     }
   },
   created () {
@@ -53,16 +57,7 @@
     border-top: 0;
   }
 
-  .chat-foot .weui-cell__bd textarea {
-    border-bottom: 1px solid #ccc;
-    font-size: 1.6rem;
-  }
+  .cf-help{
 
-  .chat-foot .weui-cell__bd textarea:focus{
-    border-bottom-color: #1AAD19;
-  }
-
-  .chat-foot .weui-cell__fd button {
-    line-height: 2
   }
 </style>

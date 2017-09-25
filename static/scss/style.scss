@@ -100,37 +100,16 @@ a.link {
 }
 
 .clr-skin {
-    color: #109d59;
+    color: #4688F8;
 }
 
-.fs-9 {
-    font-size: .9rem;
+.bg-skin {
+  background-color: #4688F8;
 }
 
-.fs-10 {
-    font-size: 1.0rem;
-}
 
-.fs-12 {
-    font-size: 1.2rem;
-}
-
-.fs-14 {
-    font-size: 1.4rem;
-}
-
-.fs-15 {
-    font-size: 1.5rem;
-}
-
-.fs-16 {
-    font-size: 1.6rem;
-}
-
-.fs-17 {
-    font-size: 1.7rem;
-}
-
-.fs-18 {
-    font-size: 1.8rem;
+@for $i from 9 through 18 {
+  .fs-#{$i} {
+    font-size: .1rem * $i;
+  }
 }

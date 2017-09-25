@@ -1,7 +1,9 @@
 <template>
-  <div class="loading-content">
-    <mt-spinner class="loading-circle" type="fading-circle" color="#fff"></mt-spinner>
-    <p class="loading-progress">{{progress}}%</p>
+  <div class="loading-warp">
+    <div class="loading-content">
+      <mt-spinner class="loading-circle" type="fading-circle" color="#fff"></mt-spinner>
+      <p class="loading-progress">{{progress}}%</p>
+    </div>
   </div>
 </template>
 
@@ -9,22 +11,10 @@
   import { Spinner } from 'mint-ui';
 
   export default {
+    props:["progress"],
     data() {
       return {
-        progress: 0
       }
-    },
-    created() {
-      var that = this;
-      this.$http.get('/static/ajax/config.json', {
-        progress(evt) {
-          that.progress = evt.total && Math.floor(100*evt.loaded/evt.total);
-        }
-      }).then(response => {
-        // success callback
-      }, response => {
-        // error callback
-      });
     },
     components: {
       Spinner
@@ -33,7 +23,7 @@
 </script>
 
 <style>
-  .loading-content {
+  .loading-warp {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -41,8 +31,13 @@
     color: #fff;
     background-color: #89cff0;
   }
+  .loading-content{
+    position: absolute;
+    top: 42%;
+    left: 0;
+    right: 0;
+  }
   .loading-circle{
     display: inline-block;
-    margin: 49% auto 0;
   }
 </style>
