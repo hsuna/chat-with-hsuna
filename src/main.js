@@ -5,6 +5,9 @@ import VueResource from 'vue-resource'
 import App from './App'
 import MintUI from 'mint-ui'
 
+import '../static/fonts/cwh/iconfont.css'
+import '../static/scss/style.scss'
+
 Vue.config.productionTip = false
 
 Vue.use(VueResource);

@@ -1,8 +1,8 @@
 <template>
   <div>
     <chat-head></chat-head>
-    <chat-body :chats="chats"></chat-body>
-    <chat-foot @sendmsg="sendMessage"></chat-foot>
+    <chat-body></chat-body>
+    <chat-foot></chat-foot>
   </div>
 </template>
 
@@ -12,17 +12,8 @@
   import ChatFoot from '../components/chat/ChatFoot'
 
   export default {
-    props:["chatdata"],
     data() {
       return {
-        chats: []
-      }
-    },
-    created (){
-    },
-    methods:{
-      sendMessage(){
-
       }
     },
     components: {

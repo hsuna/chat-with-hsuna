@@ -9,25 +9,25 @@
   export default {
     created (){
 
-  },
-  methods: {
-    backClick(){
-      this.$dialog({
-        title:'温馨提示',
-        content:'确定退出聊天窗口?',
-        assistBtn: '取消',
-        mainBtn: '确定',
-        assistFn () {},
-      mainFn () {
-        window.opener=null;
-        window.close();
+    },
+    methods: {
+      backClick(){
+        this.$dialog({
+          title:'温馨提示',
+          content:'确定退出聊天窗口?',
+          assistBtn: '取消',
+          mainBtn: '确定',
+          assistFn () {},
+          mainFn () {
+            window.opener=null;
+            window.close();
+          }
+        })
+      },
+      settingClick(){
+        this.$router.push('/setting');
       }
-    })
-  },
-  settingClick(){
-    this.$router.push('/setting');
-  }
-  }
+    }
   }
 </script>
 

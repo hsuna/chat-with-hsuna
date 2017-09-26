@@ -1,7 +1,7 @@
 <template>
   <div class="chat-body">
     <div class="cb-bg">
-      <template v-for="chat in chats">
+      <template v-for="chat in chatList">
         <selfMsg v-if="chat.type == 'self'">
           <template slot="msg">{{chat.content}}</template>
         </selfMsg>
@@ -17,8 +17,14 @@
   import selfMsg from '../msg/SelfMsg.vue'
   import otherMsg from '../msg/OtherMsg.vue'
 
+  import ChatControl from '../../control/ChatControl.js'
+
   export default {
-    props:["chats"],
+    data() {
+      return {
+        chatList:ChatControl.instance.getChatList()
+      }
+    },
     components: {
       selfMsg,
       otherMsg
