@@ -4,7 +4,6 @@
       <slot name="head"></slot>
     </div>
     <div class="self-wrap-info">
-      <p class="name"><slot name="name"></slot></p>
       <div class="msg"><slot name="msg"></slot></div>
     </div>
   </div>
@@ -40,7 +39,7 @@
         margin-top:.6rem;
         padding: .1rem .6rem;
         border-radius: .4rem;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         text-align: left;
         word-break:break-all;
         background-color: #a0e24d;
