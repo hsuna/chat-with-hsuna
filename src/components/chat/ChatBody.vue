@@ -1,21 +1,23 @@
 <template>
   <div class="chat-body">
-    <div class="cb-bg">
+    <div class="msg-rows">
       <template v-for="chat in chatList">
-        <selfMsg v-if="chat.type == 'self'">
-          <template slot="msg">{{chat.content}}</template>
-        </selfMsg>
-        <otherMsg v-if="chat.type == 'other'">
-          <template slot="msg">{{chat.content}}</template>
-        </otherMsg>
+        <div class="msg-row">
+          <hsuna-msg v-if="chat.type == 'hsuna'">
+            <template slot="msg">{{chat.content}}</template>
+          </hsuna-msg>
+          <me-msg v-if="chat.type == 'me'">
+            <template slot="msg">{{chat.content}}</template>
+          </me-msg>
+        </div>
       </template>
     </div>
   </div>
 </template>
 
 <script>
-  import selfMsg from '../msg/SelfMsg.vue'
-  import otherMsg from '../msg/OtherMsg.vue'
+  import HsunaMsg from '../msg/HsunaMsg.vue'
+  import MeMsg from '../msg/MeMsg.vue'
 
   import ChatControl from '../../control/ChatControl.js'
 
@@ -25,9 +27,9 @@
         chatList:ChatControl.instance.getChatList()
       }
     },
-    components: {
-      selfMsg,
-      otherMsg
+    {
+      HsunaMsg,
+        MeMsg
     }
   }
 </script>
@@ -42,7 +44,7 @@
     padding-top: 3.7rem;
     padding-bottom: 4.2rem;
   }
-  .cb-bg{
+  .msg-rows{
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -51,8 +53,9 @@
     overflow-y: scroll;
     padding: 1rem 0;
     background-color: #F2F2F2;
-  }
-  .cb-bg>div{
-    padding: .8rem;
+
+    .msg-row{
+      margin-bottom: .4rem;
+    }
   }
 </style>

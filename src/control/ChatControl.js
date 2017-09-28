@@ -13,19 +13,22 @@ function init(){
       if(!config) return;
       _config = config;
       updateChatList(_config[START_KEY]);
-    _selectList.splice(0, _selectList.length, ...getSelectListByKey(data.next||START_KEY));
-    },
+      _instance.setSelectList(getSelectListByKey(START_KEY));
+    };,
     getChatList(){
       return _chatList || [];
-    },
+    };,
     getSelectList(){
       return _selectList || [];
-    },
-    updateList(data){
+    };,
+    setSelectList(list){
+    _selectList.splice(0, _selectList.length,...list
+  )
+  };;,
+    updateList(data, callback){
       updateChatList(data);
-    _selectList.splice(0, _selectList.length, ...getSelectListByKey(data.next||START_KEY));
-
-    }
+      _instance.setSelectList(getSelectListByKey(data.next||START_KEY));
+    };
   }
 }
 
@@ -42,17 +45,20 @@ function updateChatList(data){
         type:'other',
         content: value.content
       })
-    });
   }
+)
+}
 }
 
 function getSelectListByKey(data){
   var list = [];
   if(Array.isArray(data)){
-    return data.map(i => _config[i]);
-  }else if(_config && _config[data]){
-    return _config[data].next.map(i => _config[i]);
-  }else{
+    return data.map(i = > _config[i]
+  )
+  };else if(_config && _config[data]){
+    return _config[data].next.map(i = > _config[i]
+  )
+  };else{
     return [];
   }
 }

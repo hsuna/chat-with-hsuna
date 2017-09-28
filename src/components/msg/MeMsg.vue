@@ -1,8 +1,5 @@
 <template>
   <div class="self-wrap">
-    <div class="self-wrap-head">
-      <slot name="head"></slot>
-    </div>
     <div class="self-wrap-info">
       <div class="msg"><slot name="msg"></slot></div>
     </div>
@@ -42,7 +39,7 @@
         font-size: 1.4rem;
         text-align: left;
         word-break:break-all;
-        background-color: #a0e24d;
+        background-color: #b2ebff;
     }
     .self-wrap-info .msg:before{
         content: '';
@@ -53,7 +50,7 @@
         width: 0;
         height: 0;
         border-top: .4rem solid transparent;
-        border-left: .4rem solid #a0e24d;
+        border-left: .4rem solid #b2ebff;
         border-bottom: .4rem solid transparent;
     }
 </style>
