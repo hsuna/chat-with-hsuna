@@ -14,21 +14,26 @@ function init(){
       _config = config;
       updateChatList(_config[START_KEY]);
       _instance.setSelectList(getSelectListByKey(START_KEY));
-    };,
+  }
+,
     getChatList(){
       return _chatList || [];
-    };,
+  }
+,
     getSelectList(){
       return _selectList || [];
-    };,
+  }
+,
     setSelectList(list){
     _selectList.splice(0, _selectList.length,...list
   )
-  };;,
+    ;
+  }
+,
     updateList(data, callback){
       updateChatList(data);
       _instance.setSelectList(getSelectListByKey(data.next||START_KEY));
-    };
+  }
   }
 }
 
@@ -55,10 +60,11 @@ function getSelectListByKey(data){
   if(Array.isArray(data)){
     return data.map(i = > _config[i]
   )
-  };else if(_config && _config[data]){
+  } else if (_config && _config[data]) {
     return _config[data].next.map(i = > _config[i]
   )
-  };else{
+    ;
+  } else {
     return [];
   }
 }
