@@ -27,9 +27,9 @@
         chatList:ChatControl.instance.getChatList()
       }
     },
-    {
+    components: {
       HsunaMsg,
-        MeMsg
+      MeMsg
     }
   }
 </script>

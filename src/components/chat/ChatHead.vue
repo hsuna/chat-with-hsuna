@@ -31,7 +31,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   .chat-head{
     position: relative;
     z-index: 2;
@@ -39,9 +39,10 @@
     text-align: center;
     font-size: 2rem;
     color: #fff;
-  }
-  .chat-head .iconfont{
-    line-height: 1;
-    font-size: 3rem;
+
+    .iconfont{
+      line-height: 1;
+      font-size: 3rem;
+    }
   }
 </style>

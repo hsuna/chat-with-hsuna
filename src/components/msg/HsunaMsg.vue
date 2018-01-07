@@ -1,41 +1,34 @@
 <template>
-  <div class="other-wrap">
-    <div class="other-wrap-info">
+  <div class="hsuna-wrap">
+    <div class="hsuna-wrap-info">
       <div class="msg"><slot name="msg"></slot></div>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-  .other-wrap{
+  .hsuna-wrap{
     color: #000;
   }
 
-  .other-wrap-info{
+  .hsuna-wrap-info{
     margin-left: 5.2rem;
     margin-right: 4rem;
 
     .msg{
       display: inline-block;
       position: relative;
-      margin-top:.6rem;
-      padding: .1rem .6rem;
+      margin-top: 1rem;
+      padding: .2rem .6rem;
       border-radius: .4rem;
       font-size: 1.4rem;
       text-align: left;
       word-break:break-all;
       background-color: #fff;
-      /*animation:mymove 1s 1;
-      -webkit-animation:mymove 1s 1;*/
-      transition: width,height 1s;
-      -webkit-transition: width,height 1s;
-      width: 0px;
-      height: 0px;
-
-      &.active{
-        width: 100px;
-        height: 100px;
-      }
+      transform-origin: 0 0 0;
+      -webkit-transform-origin: 0 0 0;
+      animation:mymove .4s 1;
+      -webkit-animation:mymove .4s 1;
 
       &:before{
         content: '';
@@ -54,13 +47,13 @@
 
   @keyframes mymove
   {
-    from {width:0px; height:0; overflow: hidden;}
-    to {width:inherit; height: inherit;}
+    from {transform: scale(0);}
+    to {transform: scale(1);}
   }
 
   @-webkit-keyframes mymove /*Safari and Chrome*/
   {
-    from {width:0px; height:0; overflow: hidden;}
-    to {width:inherit; height: inherit;}
+    from {-webkit-transform: scale(0);}
+    to {-webkit-transform: scale(1);}
   }
 </style>
