@@ -32,6 +32,12 @@
     "answer":[{
       "type":"text",
       "content":"是嘛，我觉得还可以。"
+    },{
+      "type":"text",
+      "content":"这个就是巽播。"
+    },{
+      "type":"image",
+      "path":"./static/image/timg.jpg"
     }]
   }
 }

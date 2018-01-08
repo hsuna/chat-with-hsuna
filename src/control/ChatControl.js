@@ -38,14 +38,16 @@ function init(){
 function updateChatList(data){
   if(data.text){
     _chatQueue.push({
-      type:'me',
+      name:'me',
       content: data.text
     });
   }
   if(data.answer){
     data.answer.forEach((value) => {
       _chatQueue.push({
-        type:'hsuna',
+        name:'hsuna',
+        type: value.type,
+        path: value.path,
         content: value.content
       })
     })

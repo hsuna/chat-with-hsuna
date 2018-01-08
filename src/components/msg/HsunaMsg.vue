@@ -1,10 +1,19 @@
 <template>
   <div class="hsuna-wrap">
     <div class="hsuna-wrap-info">
-      <div class="msg"><slot name="msg"></slot></div>
+      <div class="msg">
+        <span class="text" v-if="chat.type == 'text'">{{chat.content}}</span>
+        <img class="img" v-if="chat.type == 'image'" :src="chat.path" />
+      </div>
     </div>
   </div>
 </template>
+
+<script>
+  export default {
+    props: ['chat']
+  }
+</script>
 
 <style lang="scss">
   .hsuna-wrap{
@@ -29,6 +38,12 @@
       -webkit-transform-origin: 0 0 0;
       animation:mymove .4s 1;
       -webkit-animation:mymove .4s 1;
+
+      .img{
+        width: 10rem;
+        height: auto;
+        margin: .6rem .2rem;
+      }
 
       &:before{
         content: '';

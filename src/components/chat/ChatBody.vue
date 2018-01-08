@@ -3,10 +3,9 @@
     <div class="msg-rows">
       <template v-for="chat in chatList">
         <div class="msg-row">
-          <hsuna-msg v-if="chat.type == 'hsuna'">
-            <template slot="msg">{{chat.content}}</template>
+          <hsuna-msg v-if="chat.name == 'hsuna'" :chat="chat">
           </hsuna-msg>
-          <me-msg v-if="chat.type == 'me'">
+          <me-msg v-if="chat.name == 'me'">
             <template slot="msg">{{chat.content}}</template>
           </me-msg>
         </div>
@@ -50,7 +49,7 @@
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding: 1rem 0;
     background-color: #F2F2F2;
 
