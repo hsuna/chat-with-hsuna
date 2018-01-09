@@ -6,6 +6,7 @@ const START_KEY = 'start';
 let _config=null, _queueTimeId = -1,
   _chatQueue = [],
   _chatList=[],
+  _callList = [],
   _selectList=[];
 
 function init(){
@@ -26,8 +27,11 @@ function init(){
       _selectList.splice(0, _selectList.length,...list);
     },
     updateList(data, callback){
-      updateChatList(data, callback);
-      _instance.setSelectList(getSelectListByKey(data.next||START_KEY));
+      _callList.push(() => {
+        callback&&callback();
+        _instance.setSelectList(getSelectListByKey(data.next||START_KEY));
+      })
+      updateChatList(data);
     },
     isChating(){
       return -1 == _queueTimeId ? false : true;
@@ -35,7 +39,7 @@ function init(){
   }
 }
 
-function updateChatList(data){
+function updateChatList(data, callback){
   if(data.text){
     _chatQueue.push({
       name:'me',
@@ -65,9 +69,15 @@ function chatQueueTimer(init=true){
     }else if(!init){
       _chatList.push(_chatQueue.shift());
     }
-  }else if(-1 != _queueTimeId) {
-    clearInterval(_queueTimeId);
-    _queueTimeId = -1;
+  }else{
+    if(-1 != _queueTimeId) {
+      clearInterval(_queueTimeId);
+      _queueTimeId = -1;
+    }
+    while(_callList.length > 0){
+      _callList.shift()();
+    }
+
   }
 }
 

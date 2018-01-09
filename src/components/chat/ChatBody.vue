@@ -1,5 +1,5 @@
 <template>
-  <div class="chat-body">
+  <div class="chat-body" :class="{active:selectVisible}">
     <div class="msg-rows">
       <template v-for="chat in chatList">
         <div class="msg-row">
@@ -21,6 +21,7 @@
   import ChatControl from '../../control/ChatControl.js'
 
   export default {
+    props: ['selectVisible'],
     data() {
       return {
         chatList:ChatControl.instance.getChatList()
@@ -33,8 +34,10 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   .chat-body{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -42,6 +45,12 @@
     top: 0;
     padding-top: 3.7rem;
     padding-bottom: 4.2rem;
+    transition: padding-bottom 500ms;
+    -webkit-transition: padding-bottom 500ms;
+
+    &.active{
+      padding-bottom: 20.2rem;
+    }
   }
   .msg-rows{
     width: 100%;
