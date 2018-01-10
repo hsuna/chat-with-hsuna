@@ -1,9 +1,12 @@
-let CTRL_NAME = 'control::ChatControl';
+const CTRL_NAME = 'control::ChatControl';
 let _instance = global[CTRL_NAME];
 
 /**数据  */
-const START_KEY = 'start';
-let _config=null, _queueTimeId = -1,
+const START_KEY = 'start',
+  QUESTION_KEY = 'question';
+
+let _config=null,
+  _queueTimeId = -1,
   _chatQueue = [],
   _chatList=[],
   _callList = [],
@@ -18,10 +21,10 @@ function init(){
       _instance.setSelectList(getSelectListByKey(START_KEY));
     },
     getChatList(){
-      return _chatList || [];
+      return _chatList;
     },
     getSelectList(){
-      return _selectList || [];
+      return _selectList;
     },
     setSelectList(list){
       _selectList.splice(0, _selectList.length,...list);
@@ -29,7 +32,7 @@ function init(){
     updateList(data, callback){
       _callList.push(() => {
         callback&&callback();
-        _instance.setSelectList(getSelectListByKey(data.next||START_KEY));
+        _instance.setSelectList(getSelectListByKey(data.next||QUESTION_KEY));
       })
       updateChatList(data);
     },
@@ -83,7 +86,6 @@ function chatQueueTimer(init=true){
 
 
 function getSelectListByKey(data){
-  var list = [];
   if(Array.isArray(data)){
     return data.map(i => _config[i]);
   }else if(_config && _config[data]){
