@@ -6,6 +6,24 @@
     }],
     "next":["0"]
   },
+  "question":[
+    {
+      "text":"星座",
+      "answer":[{
+        "type":"text",
+        "content":"你也喜欢星座呀"
+      }],
+      "next":["1", "2"]
+    },
+    {
+      "text":"书籍",
+      "answer":[{
+        "type":"text",
+        "content":"你也喜欢星座呀"
+      }],
+      "next":["1", "2"]
+    }
+   ],
   "0":{
     "text":"你是谁？",
     "answer":[{
