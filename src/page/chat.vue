@@ -1,8 +1,8 @@
 <template>
   <div>
     <chat-head></chat-head>
-    <chat-body></chat-body>
-    <chat-foot></chat-foot>
+    <chat-body :selectVisible="selectVisible"></chat-body>
+    <chat-foot v-on:selectVisible="selectVisibleHandler"></chat-foot>
   </div>
 </template>
 
@@ -14,6 +14,12 @@
   export default {
     data() {
       return {
+        selectVisible: !1
+      }
+    },
+    methods: {
+      selectVisibleHandler(val) {
+        this.selectVisible = val;
       }
     },
     components: {

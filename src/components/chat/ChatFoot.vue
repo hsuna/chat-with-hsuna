@@ -31,15 +31,18 @@
       }
     },
     methods: {
-      selectToggleClick:function(){
+      selectToggleClick(){
+        if(ChatControl.instance.isChating()) return;
         this.selectVisible = !this.selectVisible;
         if(this.selectVisible){
           document.getElementById('selectListContent').scrollTop = 0;
         }
+        this.$emit('selectVisible', this.selectVisible);
       },
-      selectListClick:function(index){
-        ChatControl.instance.updateList(this.selectList[index]);
+      selectListClick(index){
         this.selectVisible = !1;
+        ChatControl.instance.updateList(this.selectList[index]);
+        this.$emit('selectVisible', this.selectVisible);
       }
     },
     components: {

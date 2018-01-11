@@ -6,6 +6,10 @@
     }],
     "next":["0"]
   },
+  "question":{
+    "type":"question",
+    "next":["1", "2"]
+  },
   "0":{
     "text":"你是谁？",
     "answer":[{
@@ -15,9 +19,33 @@
       "type":"text",
       "content":"巽是在卦象中代表风，意味着蓝色的风。"
     }],
-    "next":["1", "2"]
+    "next":["10", "20"]
   },
   "1":{
+    "text":"星座",
+    "answer":[{
+      "type":"text",
+      "content":"你也喜欢星座呀"
+    }],
+    "next":["999", "999"]
+  },
+  "2":{
+    "text":"书籍",
+    "answer":[{
+      "type":"text",
+      "content":"你也喜欢书籍呀"
+    }],
+    "next":["999", "999"]
+  },
+  "3":{
+    "text":"电影",
+    "answer":[{
+      "type":"text",
+      "content":"你也喜欢电影呀"
+    }],
+    "next":["999", "999"]
+  },
+  "10":{
     "text":"你对玄学很了解吗？",
     "answer":[{
       "type":"text",
@@ -27,11 +55,24 @@
       "content":"不过个人对八卦和星座都略有研究哦！"
     }]
   },
-  "2":{
+  "20":{
     "text":"哦！我对玄学了解一般般",
     "answer":[{
       "type":"text",
       "content":"是嘛，我觉得还可以。"
+    },{
+      "type":"text",
+      "content":"这个就是巽播。"
+    },{
+      "type":"image",
+      "path":"./static/image/timg.jpg"
+    }]
+  },
+  "999": {
+    "text": "一般般!",
+    "answer": [{
+        "type": "text",
+        "content": "哦"
     }]
   }
 }

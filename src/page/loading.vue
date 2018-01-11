@@ -1,6 +1,6 @@
 <template>
-  <div class="loading-warp">
-    <div class="loading-content">
+  <div class="loading-content">
+    <div class="loading-inner">
       <mt-spinner class="loading-circle" type="fading-circle" color="#fff"></mt-spinner>
       <p class="loading-progress">{{progress}}%</p>
     </div>
@@ -23,7 +23,7 @@
 </script>
 
 <style>
-  .loading-warp {
+  .loading-content {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -31,11 +31,12 @@
     color: #fff;
     background-color: #89cff0;
   }
-  .loading-content{
+  .loading-inner{
     position: absolute;
-    top: 42%;
-    left: 0;
-    right: 0;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
   .loading-circle{
     display: inline-block;
