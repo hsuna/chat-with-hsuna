@@ -2,7 +2,9 @@
   <div class="hsuna-wrap">
     <div class="hsuna-wrap-info">
       <div class="msg">
-        <span class="text" v-if="chat.type == 'text'">{{chat.content}}</span>
+        <span class="text" v-if="chat.type == 'text'">
+          <ImageText :content="chat.content"></ImageText>
+        </span>
         <img class="img" v-if="chat.type == 'image'" :src="chat.path" />
       </div>
     </div>
@@ -10,8 +12,13 @@
 </template>
 
 <script>
+  import ImageText from '../other/ImageText.vue';
+
   export default {
-    props: ['chat']
+    props: ['chat'],
+    components: {
+      ImageText
+    }
   }
 </script>
 

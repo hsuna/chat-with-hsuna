@@ -2,7 +2,7 @@
   "start":{
     "answer":[{
       "type":"text",
-      "content":"Hi，你好。"
+      "content": "Hi，你好~[/gloat]"
     }],
     "next":["0"]
   },
@@ -19,33 +19,12 @@
       "type":"text",
       "content":"巽是在卦象中代表风，意味着蓝色的风。"
     }],
-    "next":["10", "20"]
+    "next": [
+      "01",
+      "02"
+    ]
   },
-  "1":{
-    "text":"星座",
-    "answer":[{
-      "type":"text",
-      "content":"你也喜欢星座呀"
-    }],
-    "next":["999", "999"]
-  },
-  "2":{
-    "text":"书籍",
-    "answer":[{
-      "type":"text",
-      "content":"你也喜欢书籍呀"
-    }],
-    "next":["999", "999"]
-  },
-  "3":{
-    "text":"电影",
-    "answer":[{
-      "type":"text",
-      "content":"你也喜欢电影呀"
-    }],
-    "next":["999", "999"]
-  },
-  "10":{
+  "01": {
     "text":"你对玄学很了解吗？",
     "answer":[{
       "type":"text",
@@ -55,21 +34,244 @@
       "content":"不过个人对八卦和星座都略有研究哦！"
     }]
   },
-  "20":{
-    "text":"哦！我对玄学了解一般般",
+  "02": {
+    "text": "哦！我对玄学了解一般般。",
     "answer":[{
       "type":"text",
       "content":"是嘛，我觉得还可以。"
     },{
       "type":"text",
-      "content":"这个就是巽播。"
-    },{
-      "type":"image",
-      "path":"./static/image/timg.jpg"
+      "content": "个人兴趣，哈哈哈。"
     }]
   },
+  "1": {
+    "text": "星座",
+    "answer": [
+      {
+        "type": "text",
+        "content": "你也喜欢星座呀！"
+      }
+    ],
+    "next": [
+      "11",
+      "12",
+      "999"
+    ]
+  },
+  "11": {
+    "text": "对啊，你是什么星座呀？",
+    "answer": [
+      {
+        "type": "text",
+        "content": "怎么可能随随便便告诉你！"
+      },
+      {
+        "type": "text",
+        "content": "万一你长得不好看呢？那我不就亏了。"
+      }
+    ],
+    "next": [
+      "111",
+      "112",
+      "998"
+    ]
+  },
+  "111": {
+    "text": "切，我还不想知道呢？",
+    "answer": [
+      {
+        "type": "text",
+        "content": "鄙视你～"
+      }
+    ]
+  },
+  "112": {
+    "text": "一看就知道你是个外貌协会",
+    "answer": [
+      {
+        "type": "text",
+        "content": "哈哈哈，我乐意呀～"
+      }
+    ]
+  },
+  "12": {
+    "text": "还好吧，有稍微了解下。",
+    "answer": [
+      {
+        "type": "text",
+        "content": "哈哈，那我猜你一定是外貌协会天秤座了！"
+      },
+      {
+        "type": "text",
+        "content": "不然就是放荡不羁射手座！"
+      }
+    ],
+    "next": [
+      "121",
+      "122",
+      "123"
+    ]
+  },
+  "121": {
+    "text": "都错了",
+    "answer": [
+      {
+        "type": "text",
+        "content": "...，我这么聪明都会错，这世界真不靠谱～"
+      }
+    ]
+  },
+  "122": {
+    "text": "你怎么知道，看来你对星座挺了解的。",
+    "answer": [
+      {
+        "type": "text",
+        "content": "哈哈哈，我瞎猜的～"
+      }
+    ]
+  },
+  "123": {
+    "text": "瞎猜，我才不告诉你～",
+    "answer": [
+      {
+        "type": "text",
+        "content": "哦"
+      }
+    ]
+  },
+  "2": {
+    "text": "书籍",
+    "answer": [
+      {
+        "type": "text",
+        "content": "你也喜欢书籍呀！"
+      }
+    ],
+    "next": [
+      "21",
+      "22"
+    ]
+  },
+  "21": {
+    "text": "对呀，我平时也看书",
+    "answer": [
+      {
+        "type": "text",
+        "content": "我也是耶，你喜欢看哪类型的呀？"
+      }
+    ],
+    "next": [
+      "211",
+      "212",
+      "213",
+      "214"
+    ]
+  },
+  "211": {
+    "text": "管理学",
+    "answer": [
+      {
+        "type": "text",
+        "content": "我最近在看《联盟》"
+      },
+      {
+        "type": "text",
+        "content": "不过我最喜欢的是《从0到1》这本书"
+      },
+      {
+        "type": "image",
+        "path": "./static/image/timg.jpg"
+      },
+      {
+        "type": "text",
+        "path": "我觉得这本书挺不错的，通过事例讲了许多关于管理上的问题"
+      }
+    ]
+  },
+  "212": {
+    "text": "科学技术",
+    "answer": [
+      {
+        "type": "text",
+        "content": "哈哈哈，码农的成长爱好"
+      },
+      {
+        "type": "text",
+        "content": "我现在还在不断学习，有兴趣可以多多交流"
+      },
+      {
+        "type": "text",
+        "content": "这是我的个人网站"
+      }
+    ]
+  },
+  "213": {
+    "text": "文学小说",
+    "answer": [
+      {
+        "type": "text",
+        "content": "啊哦，我是个工科生"
+      },
+      {
+        "type": "text",
+        "content": "不太爱看小说[/shy]"
+      }
+    ],
+    "next": [
+      "21",
+      "22"
+    ]
+  },
+  "214": {
+    "text": "漫画",
+    "answer": [
+      {
+        "type": "text",
+        "content": "你也喜欢书籍呀！"
+      }
+    ],
+    "next": [
+      "21",
+      "22"
+    ]
+  },
+  "22": {
+    "text": "书籍",
+    "answer": [
+      {
+        "type": "text",
+        "content": "你也喜欢书籍呀！"
+      }
+    ],
+    "next": [
+      "999",
+      "999"
+    ]
+  },
+  "3": {
+    "text": "电影",
+    "answer": [
+      {
+        "type": "text",
+        "content": "你也喜欢电影呀！"
+      }
+    ],
+    "next": [
+      "999",
+      "999"
+    ]
+  },
+  "998": {
+    "text": "不想说",
+    "answer": [
+      {
+        "type": "text",
+        "content": "哦"
+      }
+    ]
+  },
   "999": {
-    "text": "一般般!",
+    "text": "一般般",
     "answer": [{
         "type": "text",
         "content": "哦"
