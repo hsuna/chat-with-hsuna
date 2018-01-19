@@ -2,13 +2,13 @@
   <div class="chat-foot">
     <div class="cf-options">
       <div class="cf-help">
-        <i class="icon-hsuna cwh-help"></i>
+        <icon name="help" scale="3.4"></icon>
       </div>
       <div class="cf-input" @click="selectToggleClick">
       </div>
       <div class="cf-select-btn" :class="{active:selectVisible}" @click="selectToggleClick">
-        <i class="icon-hsuna cwh-top-arrows"></i>
-        <i class="icon-hsuna cwh-bottom-arrows"></i>
+        <icon class="top-arrows" name="top-arrows" scale="3.4"></icon>
+        <icon class="bottom-arrows" name="bottom-arrows" scale="3.4"></icon>
       </div>
     </div>
     <div id="selectListContent" class="cf-select-content" :class="{active:selectVisible}">
@@ -80,32 +80,26 @@
     }
 
     .cf-select-btn{
-      .cwh-bottom-arrows{
+      .bottom-arrows{
         display: none;
       }
 
       &.active{
-        .cwh-top-arrows{
+        .top-arrows{
           display: none;
         }
-        .cwh-bottom-arrows{
+        .bottom-arrows{
           display: block;
         }
       }
     }
 
-    .icon-hsuna{
-      line-height: 1;
-      vertical-align: bottom;
-      color: #4688F8;
+    .svg-icon{
+      -webkit-transform: translateY(.2rem);
+      transform: translateY(.2rem);
     }
-
-    .cwh-help{
-      font-size: 2.8rem;
-    }
-    .cwh-top-arrows,
-    .cwh-bottom-arrows{
-      font-size: 3rem;
+    .svg-icon path{
+      fill:rgba(70, 136, 248, 1);
     }
   }
 
@@ -126,7 +120,7 @@
 
       li{
         margin: .6rem 0;
-        padding: .6rem;
+        padding: .4rem;
         list-style: none;
         border-radius: .5rem;
         background-color: #fff;

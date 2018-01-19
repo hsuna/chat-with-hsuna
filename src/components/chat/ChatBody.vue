@@ -59,6 +59,9 @@
     }
   }
   .msg-rows{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding-bottom: 2rem;
     width: 100%;
     height: 100%;
     overflow-x: hidden;

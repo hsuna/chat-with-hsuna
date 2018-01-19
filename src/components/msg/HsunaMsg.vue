@@ -2,9 +2,7 @@
   <div class="hsuna-wrap">
     <div class="hsuna-wrap-info">
       <div class="msg">
-        <span class="text" v-if="chat.type == 'text'">
-          <ImageText :content="chat.content"></ImageText>
-        </span>
+        <ImageText class="text" v-if="chat.type == 'text'" :content="chat.content"></ImageText>
         <img class="img" v-if="chat.type == 'image'" :src="chat.path" />
       </div>
     </div>
