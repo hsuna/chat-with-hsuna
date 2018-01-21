@@ -3,6 +3,7 @@
     <div class="hsuna-wrap-info">
       <div class="msg">
         <ImageText class="text" v-if="chat.type == 'text'" :content="chat.content"></ImageText>
+        <a class="link" v-if="chat.type == 'href'" :src="chat.path" />
         <img class="img" v-if="chat.type == 'image'" :src="chat.path" />
       </div>
     </div>

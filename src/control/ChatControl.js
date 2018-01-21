@@ -44,10 +44,20 @@ function init(){
 
 function updateChatList(data, callback){
   if(data.text){
-    _chatQueue.push({
-      name:'me',
-      content: data.text
-    });
+    if(Array.isArray(data.text)){
+      data.text.forEach((value) => {
+        _chatQueue.push({
+          name:'me',
+          content: value
+        })
+      })
+    }else{
+      _chatQueue.push({
+        name:'me',
+        content: data.text
+      });
+    }
+
   }
   if(data.answer){
     data.answer.forEach((value) => {

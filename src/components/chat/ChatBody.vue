@@ -3,11 +3,8 @@
     <div id="msgRowConent" class="msg-rows">
       <template v-for="chat in chatList">
         <div class="msg-row">
-          <hsuna-msg v-if="chat.name == 'hsuna'" :chat="chat">
-          </hsuna-msg>
-          <me-msg v-if="chat.name == 'me'">
-            <template slot="msg">{{chat.content}}</template>
-          </me-msg>
+          <hsuna-msg v-if="chat.name == 'hsuna'" :chat="chat"></hsuna-msg>
+          <me-msg v-if="chat.name == 'me'" :chat="chat"></me-msg>
         </div>
       </template>
     </div>

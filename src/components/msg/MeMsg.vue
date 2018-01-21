@@ -1,13 +1,22 @@
 <template>
   <div class="me-wrap">
     <div class="me-wrap-info">
-      <div class="msg"><slot name="msg"></slot></div>
+      <div class="msg">
+        <ImageText class="text" :content="chat.content"></ImageText>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+  import ImageText from '../other/ImageText.vue';
 
+  export default {
+    props: ['chat'],
+    components: {
+      ImageText
+    }
+  }
 </script>
 
 <style lang="scss">
